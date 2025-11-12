@@ -2,7 +2,7 @@
 
 set -e
 
-g++ src/main.cpp -o uve
+g++ -I$HOME/ext/glfw/include src/main.cpp -o uve -L$HOME/ext/glfw/build/src -l:libglfw3.a 
 
 if test "$#" -ge 1 -a "$1" = "--run" ; then
     ./uve
