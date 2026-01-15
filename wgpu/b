@@ -6,9 +6,10 @@ g++                                             \
     -I$HOME/ext/glfw/include                    \
     -I$HOME/ext/volk/                           \
     -I$HOME/ext/VulkanMemoryAllocator/include   \
-    src/main.cpp -o uve                         \
+    src/ttf.cpp                                 \
+    src/mui.cpp -o mui                          \
     -L$HOME/ext/glfw/build/src -l:libglfw3.a
 
 if test "$#" -ge 1 -a "$1" = "--run" ; then
-    ./uve
+    ./mui
 fi

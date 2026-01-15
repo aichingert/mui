@@ -10,6 +10,8 @@
 #define VMA_VULKAN_VERSION 1004000
 #include "vk_mem_alloc.h"
 
+#include "ttf.cpp"
+
 int main(void) {
     if (!glfwInit()) return 1;
     if (volkInitialize() != VK_SUCCESS) return 1;
