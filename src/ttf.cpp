@@ -1,7 +1,4 @@
-#include <vector>
-#include <string>
-#include <fstream>
-#include <cinttypes>
+#include "ttf.hpp"
 
 //#define ON_CURVE                                0b00000001
 //#define X_SHORT_VECTOR                          0b00000010
@@ -484,9 +481,12 @@
 //}
 
 std::vector<std::uint64_t> ttf_get_glyph(std::string font, std::uint16_t code_point) {
-    std::ifstream t(font);
-    std::string buf((std::istreambuf_iterator<char>(t)),
-                 std::istreambuf_iterator<char>());
+    std::ifstream file(font);
+    std::string source = std::string((std::istreambuf_iterator<char>(file)),
+                                    std::istreambuf_iterator<char>());
+
+    //std::print("{0}\n", source);
+    std::cout << source.size() << ' ' << source << '\n';
 
     std::vector<std::uint64_t> vertices;
     return vertices;

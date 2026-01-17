@@ -10,22 +10,22 @@
 #define VMA_VULKAN_VERSION 1004000
 #include "vk_mem_alloc.h"
 
-#include "ttf.cpp"
+#include "ttf.hpp"
 
 int main(void) {
-    if (!glfwInit()) return 1;
-    if (volkInitialize() != VK_SUCCESS) return 1;
+    //if (!glfwInit()) return 1;
+    //if (volkInitialize() != VK_SUCCESS) return 1;
 
-    uint32_t version = volkGetInstanceVersion();
+    //uint32_t version = volkGetInstanceVersion();
 
-    std::cout << VK_VERSION_MAJOR(version) << '.' << VK_VERSION_MINOR(version) << '.' << VK_VERSION_PATCH(version) << '\n';
+    //std::cout << VK_VERSION_MAJOR(version) << '.' << VK_VERSION_MINOR(version) << '.' << VK_VERSION_PATCH(version) << '\n';
 
-    glfwWindowHint(GLFW_CLIENT_API, GLFW_NO_API);
-    GLFWwindow *win = glfwCreateWindow(640, 480, "uve", nullptr, nullptr);
-    if (!win) {
-        glfwTerminate();
-        return 1;
-    }
+    //glfwWindowHint(GLFW_CLIENT_API, GLFW_NO_API);
+    //GLFWwindow *win = glfwCreateWindow(640, 480, "uve", nullptr, nullptr);
+    //if (!win) {
+    //    glfwTerminate();
+    //    return 1;
+    //}
 
     //VmaAllocator allocator;
     //VmaVulkanFunctions vulkanFunctions = {};
@@ -40,9 +40,10 @@ int main(void) {
     //    .pVulkanFunctions = &vulkanFunctions;
     //};
 
-    while (!glfwWindowShouldClose(win)) {
-        glfwPollEvents();
-    }
+    //while (!glfwWindowShouldClose(win)) {
+    //    glfwPollEvents();
+    //}
 
+    auto v = ttf_get_glyph("~/ext/font/tff/Px437_Nix8810_M35.ttf", 'A');
     std::cout << "Hello, world\n";
 }
